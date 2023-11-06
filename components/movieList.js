@@ -1,6 +1,6 @@
 import { View, Text, ScrollView, TouchableWithoutFeedback, Image, Dimensions, TouchableOpacity } from 'react-native'
 import React from 'react'
-import { moviesData } from '../constants'
+import { moviesData } from '../constant'
 import { useNavigation } from '@react-navigation/native';
 import { fallbackMoviePoster, image185, image342, poster342 } from '../api/moviedb';
 import { styles } from '../theme';

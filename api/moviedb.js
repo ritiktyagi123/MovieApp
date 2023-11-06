@@ -1,5 +1,5 @@
 import axios from "axios";
-import { apiKey } from "../constants";
+import { apiKey } from "../constant";
 
 
 // endpoints
