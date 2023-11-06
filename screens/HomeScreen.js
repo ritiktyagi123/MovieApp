@@ -19,8 +19,7 @@ export default function HomeScreen() {
   const [topRated, setTopRated] = useState([]);
   const [popular, setPopular] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [selectedOption, setSelectedOption] = useState(''); // Initialize as an empty string
-  const navigation = useNavigation();
+  const [selectedOption, setSelectedOption] = useState(''); 
 
   useEffect(() => {
     getTrendingMovies();
@@ -55,9 +54,9 @@ export default function HomeScreen() {
 
   const toggleSelectedOption = (option) => {
     if (selectedOption === option) {
-      setSelectedOption(''); // Deselect the option if it's already selected
+      setSelectedOption(''); 
     } else {
-      setSelectedOption(option); // Select the option if it's not selected
+      setSelectedOption(option); 
     }
   };
 
@@ -69,7 +68,8 @@ export default function HomeScreen() {
         <View className="flex-row justify-between items-center mx-4">
           <Bars3CenterLeftIcon size="30" strokeWidth={2} color="white" />
           <Text className="text-white text-3xl font-bold">
-            <Text style={styles.text}>M</Text>ovies
+            <Text style={styles.text}>M</Text>ovie
+            <Text style={styles.text}>A</Text>pp
           </Text>
           <TouchableOpacity onPress={() => navigation.navigate('Search')}>
             <MagnifyingGlassIcon size="30" strokeWidth={2} color="white" />
@@ -86,7 +86,7 @@ export default function HomeScreen() {
           ? 'bg-red-500 text-white'
           : 'text-white'
       }`}
-      style={{ height: 40 }} // Adjust the height as needed
+      style={{ height: 40 }} 
     >
       <Text className="text-white" >{option}</Text>
     </TouchableOpacity>

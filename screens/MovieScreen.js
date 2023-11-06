@@ -8,7 +8,6 @@ import {
   Platform,
 } from "react-native";
 import React, { useEffect, useRef, useState } from "react";
-import { Video } from 'expo-av';
 import { useNavigation, useRoute } from "@react-navigation/native";
 import { LinearGradient } from "expo-linear-gradient";
 import { ArrowLeftIcon, ChevronLeftIcon } from "react-native-heroicons/outline";
@@ -40,7 +39,6 @@ export default function MovieScreen() {
   const [similarMovies, setSimilarMovies] = useState([]);
   const [isFavourite, toggleFavourite] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [isVideoPlaying, setIsVideoPlaying] = useState(true);
 
   useEffect(() => {
     setLoading(true);
@@ -104,7 +102,6 @@ export default function MovieScreen() {
         ) : (
           <View>
             <Image
-              // source={require('../assets/images/moviePoster2.png')}
               source={{
                 uri: image500(movie.poster_path) || fallbackMoviePoster,
               }}
@@ -176,26 +173,7 @@ export default function MovieScreen() {
           data={similarMovies}
         />
       )}
-       {/* Video Component */}
-       <View className="bg-black h-[150px] align-center justify-center">
-        <Video
-          source={{ uri: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4' }}
-          rate={1.0}
-          volume={1.0}
-          isMuted={false}
-          resizeMode="cover"
-          shouldPlay={isVideoPlaying}
-          isLooping
-          className="w-full h-[200px]"
-          useNativeControls
-        />
-        <TouchableOpacity
-          onPress={() => setIsVideoPlaying(!isVideoPlaying)}
-          className="p-4 rounded-lg"
-        >
-          <Text>{isVideoPlaying ? 'Pause' : 'Play'}</Text>
-        </TouchableOpacity>
-      </View>
+      
     </ScrollView>
   );
 }
