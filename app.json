@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "app-ui",
+    "name": "MovieApp2",
     "slug": "movieapp2",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -21,7 +21,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.ritiiktyagi01356.movieapp2"
     },
     "web": {
       "favicon": "./assets/favicon.png"
