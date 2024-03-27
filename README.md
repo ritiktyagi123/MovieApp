@@ -72,4 +72,11 @@ Like `npm start` / `yarn start`, but also attempts to open your app on a connect
 
 <br />
 
+### Screenshots
+
+![Screenshot 1](./assets/ScreenShots/Home.jpeg)
+![Screenshot 2](./assets/ScreenShots/Search%20Funtion.jpeg)
+![Screenshot 3](./assets/ScreenShots/Movie%20Details.jpeg)
+![Screenshot 4](./assets/ScreenShots/Cast%20Details.jpeg)
+![Screenshot 5](./assets/ScreenShots/Sorting.jpeg)
 
