@@ -1,0 +1,35 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches:
+      - master  
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 18  
+
+      - name: Install dependencies
+        run: |
+          npm install
+        working-directory: ../../../Movie-App  # Change this to your project directory
+
+      - name: Build and package
+        run: |
+          npx react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res
+        working-directory: ../../../Movie-App  # Change this to your project directory
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@4.1.4
+        with:
+          branch: gh-pages  # You can choose a different branch or use 'docs' if you want
+          folder: ../../assets  # Change this to your assets path
